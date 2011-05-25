@@ -8,7 +8,8 @@ class Participant < ActiveRecord::Base
   validates_presence_of :zip, :message => "Bitte geben Sie eine PLZ an."
   validates_presence_of :storyname, :message => "Bitte geben Sie einen Stroynamen an."
   validates_presence_of :email, :message =>  "Bitte geben Sie eine Email Adresse an."
-  
+  validates_presence_of :telephone, :message =>  "Bitte geben Sie eine Telefonnummer an."
+
   
   validates_length_of :name, :maximum => 100, :message => "Namen: maximale L&auml;nge von 42 Zeichen!"
   validates_length_of :street, :maximum => 42, :message => "Strasse: maximale L&auml;nge von 42 Zeichen!"

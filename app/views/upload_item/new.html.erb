@@ -1,2 +1,42 @@
-<h1>UploadItem#new</h1>
-<p>Find me in app/views/upload_item/new.html.erb</p>
+<%= error_messages_for :picture, :image %>
+
+<h1>Einreichung hochladen</h1>
+<p>
+  <strong>Story Name:</strong> 
+  <%= link_to @participant.storyname, :controller => "participant", :action => "show", :id => @participant.id %>
+</p>
+
+<% form_for(:upload_item, :url => {:controller => :upload_item, :action => :create, :id => @participant }) do |f| %>
+    <p>
+      <%= label :uploaded_data, "Datei" %>
+      <%= file_field_tag :uploaded_data %> *
+    </p>
+    <p>
+      <%= label :title, "Titel:" %>
+      <%= f.text_field :title %> *
+    </p>
+    <p>
+      <%= f.check_box :upload_rules %>
+      <label>
+        Ich befolge folgende
+        <%= link_to "Regeln", "/pictures.html#uploadrules" %>
+        beim Hochladen des Bildes *
+      </label>
+    </p>
+  <fieldset>
+    <legend>Beschreibung: </legend>
+    <p><%= f.text_area :description, :cols => 60, :rows => 7 %></p>
+    <p>Beim Kommentar kann <a href="http://de.wikipedia.org/wiki/BBCode">BBCode</a> verwendet werden!</p>
+  </fieldset>
+  <p>
+    <%= f.submit 'Upload' %>
+  </p>
+
+  <hr />
+  <h3>Hinweise:</h3>
+  <ul>
+    <li>Felder mit * bitte angeben.</li>
+    <li>Nur Bilddateien erlaubt.</li>
+    <li>Dateigr&ouml;sse &lt; 3MB.</li>
+  </ul>
+<% end %>

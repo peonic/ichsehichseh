@@ -22,13 +22,16 @@
     </tr>
     <tr>
       <td>
-        <%= f.label :zip, "Postleitzahl" %>, 
-        <%= f.label :town, "Stadt:" %>
+        <%= f.label :zip, "Postleitzahl" %>, <%= f.label :town, "Stadt:" %>
       </td>
       <td colspan="2">
         <%= f.text_field :zip, :size => 5 %>
         <%= f.text_field :town, :size => 38 %>
       </td>
+    </tr>
+	<tr>
+      <td><%= f.label :telephone, "Telefonnummer:" %></td>
+      <td><%= f.text_field :telephone, :size => 42 %></td>
     </tr>
   </table>
 </fieldset>
