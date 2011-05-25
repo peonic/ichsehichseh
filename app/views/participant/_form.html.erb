@@ -1,0 +1,48 @@
+<% %>
+<fieldset>
+  <legend>Teilnehmer</legend>
+  <table>
+    <tr>
+      <td><%= f.label :name, "Name:" %></td>
+      <td colspan="2"><%= f.text_field :name, :size => 46 %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :email, "Email Adresse:" %></td>
+      <td><%= f.text_field :email, :size => 42 %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :password, "Password:" %></td>
+      <td><%= f.text_field :password, :size => 42 %></td>
+	</tr>
+    <tr>
+      <td><%= f.label :street, "Strasse, Hausnummer:" %></td>
+      <td colspan="2">
+        <%= f.text_field :street, :size => 46 %> 
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.label :zip, "Postleitzahl" %>, 
+        <%= f.label :town, "Stadt:" %>
+      </td>
+      <td colspan="2">
+        <%= f.text_field :zip, :size => 5 %>
+        <%= f.text_field :town, :size => 38 %>
+      </td>
+    </tr>
+  </table>
+</fieldset>
+<p></p>
+<fieldset>
+  <legend>Story Beschreibung</legend>
+  <table>
+	<tr>
+      <td><%= f.label :storyname, "Name der Fotostory :" %></td>
+      <td><%= f.text_field :storyname, :size => 42 %></td>
+    </tr>
+  </table>
+  
+  <p><%= f.label :comment, "Beschreibung" %></p>
+  <p><%= f.text_area :comment, :cols => 68, :rows => 10 %></p>
+  <p>Bei der Beschreibung kann <a href="http://de.wikipedia.org/wiki/BBCode">BBCode</a> verwendet werden!</p>
+</fieldset>

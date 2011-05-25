@@ -1,2 +1,11 @@
-<h1>Participant#new</h1>
-<p>Find me in app/views/participant/new.html.erb</p>
+<h1>Teilnehmer</h1>
+<p>es müssen alle Felder ausgefüllt werden</p>
+
+<% form_for(@participant)  do |f| %>
+  <%= render :partial => "form", :locals => {:f => f} %>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+<%= link_to "Zurück", "/" %>
+

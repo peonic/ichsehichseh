@@ -17,8 +17,8 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample resource route with sub-resources:
   #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
-  map.resources :uploads, :controller => 'upload' do |uploads|  
-    uploads.resources :files
+  map.resources :participants, :controller => "participant" do |uploads|  
+    uploads.resources :upload_item
   end
 
   # Sample resource route with more complex sub-resources
@@ -34,7 +34,7 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  map.root :controller => "upload", :action => "new"
+  map.root :controller => "participant", :action => "new"
 
   # See how all your routes lay out with "rake routes"
 
