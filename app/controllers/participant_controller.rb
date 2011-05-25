@@ -12,6 +12,11 @@ class ParticipantController < ApplicationController
         flash[:error] = @participant.errors
         render :action => "new"
     end
-
   end
+  
+  def show
+    @participant = Participant.find(params[:id])
+    @upload_items = @participant.upload_item
+  end
+  
 end

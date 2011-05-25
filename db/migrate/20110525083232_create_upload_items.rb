@@ -6,6 +6,8 @@ class CreateUploadItems < ActiveRecord::Migration
       t.string "content_type", :null => false
       t.string "filename", :null => false
       t.integer "size", :null => false
+      t.integer :width
+      t.integer :height
       t.text "description"
       t.timestamps
     end

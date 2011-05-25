@@ -9,7 +9,7 @@
 <% form_for(:upload_item, :url => {:controller => :upload_item, :action => :create, :id => @participant }) do |f| %>
     <p>
       <%= label :uploaded_data, "Datei" %>
-      <%= file_field_tag :uploaded_data %> *
+      <%= f.file_field :uploaded_data %> *
     </p>
     <p>
       <%= label :title, "Titel:" %>

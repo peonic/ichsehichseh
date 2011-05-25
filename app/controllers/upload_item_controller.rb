@@ -12,7 +12,7 @@ class UploadItemController < ApplicationController
     
     if @upload_item.save
       flash[:notice] = "Upload completed"
-      redirect_to :action => "new", :participant_id => @participant
+      redirect_to :controller => participant, :action => "show", :id => @participant
     else
       flash[:error] = @upload_item.errors
       render :action => "new", :participant_id => @participant

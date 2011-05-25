@@ -9,14 +9,14 @@ body {
 }
 
 a { 
-  color: #B8860B; 
+  color: #0066cc;; 
   text-decoration:none;
   padding: 0 0.5em 0 0.5em;
 }
 input:focus, textarea:focus {
-  border: 2px solid #B8860B;
+  border: 2px solid #0066cc;
 }
-a:visited { color: #B8860B; }
+a:visited { color: #0066cc; }
 a:hover { color: #000; background-color:#fff; }
 
 div#container {
@@ -49,10 +49,12 @@ div#header {
   margin-bottom: 1em;
   max-width: 860px;
   
-  border-bottom:#000000;
+  border-bottom-color:#000000;
   border-bottom-width:2px;
-  
-  border-top:#000000;
+  border-bottom-style:solid;
+
+  border-top-style:solid;
+  border-top-color:#000000;
   border-top-width:1px;
 }
 

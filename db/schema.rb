@@ -26,11 +26,13 @@ ActiveRecord::Schema.define(:version => 20110525083232) do
   end
 
   create_table "upload_items", :force => true do |t|
-    t.integer  "participants_id", :null => false
-    t.string   "title",           :null => false
-    t.string   "content_type",    :null => false
-    t.string   "filename",        :null => false
-    t.integer  "size",            :null => false
+    t.integer  "participant_id", :null => false
+    t.string   "title",          :null => false
+    t.string   "content_type",   :null => false
+    t.string   "filename",       :null => false
+    t.integer  "size",           :null => false
+    t.integer  "width"
+    t.integer  "height"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
