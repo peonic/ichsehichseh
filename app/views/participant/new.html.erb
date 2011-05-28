@@ -3,6 +3,7 @@
 
 <% form_for(@participant)  do |f| %>
   <%= render :partial => "form", :locals => {:f => f} %>
+<%= recaptcha_tags %>
   <p>
     <%= f.submit "Create" %>
   </p>

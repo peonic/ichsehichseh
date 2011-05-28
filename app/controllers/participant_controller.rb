@@ -5,7 +5,7 @@ class ParticipantController < ApplicationController
 
   def create
     @participant = Participant.new(params[:participant])
-    if @participant.save
+    if verify_recaptcha(:model => @participation, :message => "Oh! It's error with reCAPTCHA!") && @participant.save
       flash[:notice] = "Erster Schritt erfolgreich, Benutzer angelet"
       redirect_to :action => "new", :controller => "upload_item", :participant_id => @participant 
     else

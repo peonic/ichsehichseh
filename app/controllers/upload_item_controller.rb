@@ -10,7 +10,7 @@ class UploadItemController < ApplicationController
     @participant = Participant.find(params[:id])
     @upload_item.participant = @participant
     
-    if @upload_item.save
+    if verify_recaptcha(@upload_item) && @upload_item.save
       flash[:notice] = "Upload completed"
       redirect_to :controller => participant, :action => "show", :id => @participant
     else

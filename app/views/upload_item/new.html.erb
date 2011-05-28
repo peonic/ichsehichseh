@@ -6,10 +6,10 @@
   <%= link_to @participant.storyname, :controller => "participant", :action => "show", :id => @participant.id %>
 </p>
 
-<% form_for(:upload_item, :url => {:controller => :upload_item, :action => :create, :id => @participant }) do |f| %>
+<% form_for(:upload_item, :url => {:action => :create, :id => @participant }, :html => { :multipart => true }) do |f| %>
     <p>
-      <%= label :uploaded_data, "Datei" %>
-      <%= f.file_field :uploaded_data %> *
+      <%= label :upload, "Datei" %>
+      <%= f.file_field :upload %> *
     </p>
     <p>
       <%= label :title, "Titel:" %>
@@ -28,6 +28,8 @@
     <p><%= f.text_area :description, :cols => 60, :rows => 7 %></p>
     <p>Beim Kommentar kann <a href="http://de.wikipedia.org/wiki/BBCode">BBCode</a> verwendet werden!</p>
   </fieldset>
+<%= recaptcha_tags %>
+
   <p>
     <%= f.submit 'Upload' %>
   </p>
