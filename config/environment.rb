@@ -19,6 +19,7 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
+  config.gem "paperclip"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -38,4 +39,8 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
+ 
 end
+
+ENV['RECAPTCHA_PUBLIC_KEY'] = '6LcdCQEAAAAAAPf2r2D1cdY6i8S_XOUKYI5UCGKk'
+ENV['RECAPTCHA_PRIVATE_KEY'] = '6LcdCQEAAAAAANS7dze-hxiZ4f76yvadCnLYDbx2'

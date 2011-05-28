@@ -9,7 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110525083232) do
+ActiveRecord::Schema.define(:version => 20110528124443) do
+
+  create_table "attachments", :force => true do |t|
+    t.string  "content_type", :null => false
+    t.string  "filename",     :null => false
+    t.integer "size",         :null => false
+    t.integer "width"
+    t.integer "height"
+  end
 
   create_table "participants", :force => true do |t|
     t.string   "name",       :limit => 100, :null => false
@@ -26,11 +34,11 @@ ActiveRecord::Schema.define(:version => 20110525083232) do
   end
 
   create_table "upload_items", :force => true do |t|
-    t.integer  "participant_id", :null => false
-    t.string   "title",          :null => false
-    t.string   "content_type",   :null => false
-    t.string   "filename",       :null => false
-    t.integer  "size",           :null => false
+    t.integer  "participant_id",      :null => false
+    t.string   "title"
+    t.string   "upload_content_type"
+    t.string   "upload_file_name"
+    t.integer  "upload_file_size"
     t.integer  "width"
     t.integer  "height"
     t.text     "description"

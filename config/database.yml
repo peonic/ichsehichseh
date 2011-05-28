@@ -13,7 +13,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   adapter: mysql
-  database: ichsehichseh-test
+  database: ichsehichseh_test
   username: ichsehichseh
   password: projektstart0205
   host: localhost

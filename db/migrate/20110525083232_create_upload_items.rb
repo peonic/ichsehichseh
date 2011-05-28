@@ -2,10 +2,10 @@ class CreateUploadItems < ActiveRecord::Migration
   def self.up
     create_table :upload_items do |t|
       t.integer "participant_id", :null => false
-      t.string "title", :null => false
-      t.string "content_type", :null => false
-      t.string "filename", :null => false
-      t.integer "size", :null => false
+      t.string "title"
+      t.string "upload_content_type"
+      t.string "upload_file_name"
+      t.integer "upload_file_size"
       t.integer :width
       t.integer :height
       t.text "description"
