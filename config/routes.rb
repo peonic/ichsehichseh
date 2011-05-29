@@ -21,6 +21,9 @@ ActionController::Routing::Routes.draw do |map|
     participants.resources :upload_item, :controller => "upload_item"
   end
 
+  # authlogic user_session
+  map.resource :user_sessions
+
   # Sample resource route with more complex sub-resources
   #   map.resources :products do |products|
   #     products.resources :comments
