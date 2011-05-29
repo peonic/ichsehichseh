@@ -30,5 +30,4 @@ module ApplicationHelper
     errors.each { |attr,msg| error_list << "<li>#{msg}</li>\n" }
     error_list << '</ul>'
   end
-
 end

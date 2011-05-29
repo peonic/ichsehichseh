@@ -23,6 +23,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # authlogic user_session
   map.resource :user_sessions
+  map.resources :users
 
   # Sample resource route with more complex sub-resources
   #   map.resources :products do |products|
@@ -46,4 +47,7 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing or commenting them out if you're using named routes and resources.
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
+  
+  map.login "login", :controller => "user_sessions", :action => "new"
+  map.logout "logout", :controller => "user_sessions", :action => "destroy"
 end

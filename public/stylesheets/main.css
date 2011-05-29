@@ -71,3 +71,7 @@ div#footer li {
   padding: 0 0.5em 0 0;
 }
 
+div#user_nav {
+  float: right;
+  font-size: 12px;
+}

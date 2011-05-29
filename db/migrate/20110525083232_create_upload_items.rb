@@ -1,7 +1,7 @@
 class CreateUploadItems < ActiveRecord::Migration
   def self.up
     create_table :upload_items do |t|
-      t.integer "participant_id", :null => false
+      t.integer "user_id", :null => false
       t.string "title"
       t.string "upload_content_type"
       t.string "upload_file_name"

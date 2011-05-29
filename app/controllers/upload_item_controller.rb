@@ -1,21 +1,21 @@
 class UploadItemController < ApplicationController
   def new
-    @participant = Participant.find(params[:participant_id])
+    @user = current_user
     @upload_item = UploadItem.new()
-    @upload_item.participant = @participant
+    @upload_item.participant = @user
   end
   
   def create
     @upload_item = UploadItem.new(params[:upload_item])
-    @participant = Participant.find(params[:id])
-    @upload_item.participant = @participant
+    @user = current_user
+    @upload_item.user = current_user
     
     if verify_recaptcha(:model => @upload_item, :message => "Oh! It's error with reCAPTCHA!") && @upload_item.save
       flash[:notice] = "Upload completed"
-      redirect_to :controller => participant, :action => "show", :id => @participant
+      redirect_to :action => "show", :id => @upload_item
     else
       flash[:error] = @upload_item.errors
-      render :action => "new", :participant_id => @participant
+      render :action => "new", :id => current_user
     end
     
   end
