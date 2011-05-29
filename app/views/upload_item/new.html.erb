@@ -3,7 +3,7 @@
 <h1>Einreichung hochladen</h1>
 <p>
   <strong>Story Name:</strong> 
-  <%= link_to @participant.storyname, :controller => "participant", :action => "show", :id => @participant.id %>
+  <%= link_to @user.storyname, users_path %>
 </p>
 
 <% form_for(:upload_item, :url => {:action => :create, :id => @participant }, :html => { :multipart => true }) do |f| %>

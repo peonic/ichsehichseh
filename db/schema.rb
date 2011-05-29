@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20110529124613) do
   end
 
   create_table "upload_items", :force => true do |t|
-    t.integer  "participant_id",      :null => false
+    t.integer  "user_id",             :null => false
     t.string   "title"
     t.string   "upload_content_type"
     t.string   "upload_file_name"
