@@ -1,0 +1,37 @@
+<h1>TeilnehmerIn: <%=h @user.name %></h1>
+
+<fieldset>
+    <legend>Daten: </legend>
+<p>
+  <b>Strasse:</b>
+  <%=h @user.street %>
+</p>
+
+<p>
+  <b>PLZ, Ort:</b>
+  <%=h @user.zip %> <%=h @user.city %>
+</p>
+
+<p>
+  <b>Telefon:</b>
+  <%=h @user.telephone %>
+</p>
+
+<p>
+  <b>Geburtsdatum:</b>
+  <%=h @user.birthday %>
+</p>
+</fieldset>
+<p>
+<%= link_to 'Edit', edit_user_url %>
+</p>
+<% if defined?(@story) %>
+<p>
+<%= render :partial => "stories/show", :locals => {:story => @story, :user => @user} %>
+</p>
+<% else %>
+<h2>Fotostory:</h2>
+<p>
+<%= link_to "Neue Fotostory", new_story_url %>
+</p>
+<% end %>

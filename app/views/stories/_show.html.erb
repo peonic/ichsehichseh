@@ -1,0 +1,13 @@
+<h2>Fotostory: <%=h story.name %></h2>
+<fieldset>
+    <legend>Beschreibung: </legend>
+<p>
+  <%= story.description %>
+</p>
+</fieldset>
+<p>
+<%= link_to "Story editieren", edit_story_url %> | <%= link_to "Einreichung hochladen", new_upload_item_url %>
+</p>
+<p>
+<%= link_to "TeilnehmerIn ansehen", user_url %>
+</p>

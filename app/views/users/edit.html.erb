@@ -1,0 +1,10 @@
+<h1>TeilnehmerIn</h1>
+<p>es müssen alle Felder ausgef&uuml;llt werden!</p>
+
+<% form_for(@user)  do |f| %>
+  <%= render :partial => "form", :locals => {:f => f} %>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+<%= link_to "Zurück", "/" %>
