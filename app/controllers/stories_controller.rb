@@ -21,7 +21,7 @@ class StoriesController < ApplicationController
     @story.user = current_user
     if @story.save
       flash[:notice] = "Erfolgreich angelegt"
-      redirect_to :controller => :upload_items, :action => :new, :id => @story
+      redirect_to new_upload_item_url
     else
       flash[:error] = @story.errors
       redirect_to new_story_url

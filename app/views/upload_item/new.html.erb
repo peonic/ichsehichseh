@@ -1,10 +1,6 @@
-<h1>Einreichung hochladen</h1>
-<p>
-  <strong>Story Name:</strong> 
-  <%= link_to @user.storyname, user_path(@user) %>
-</p>
+<h1>Einreichung hochladen für Story: <%= @story.name %></h1>
 
-<% form_for(:upload_item, :url => {:action => :create, :id => @participant }, :html => { :multipart => true }) do |f| %>
+<% form_for(:upload_item, :html => { :multipart => true }) do |f| %>
 	<%= error_messages_for :upload_item %>
     <p>
       <%= label :upload, "Datei" %>
@@ -25,17 +21,22 @@
   <fieldset>
     <legend>Beschreibung: </legend>
     <p><%= f.text_area :description, :cols => 60, :rows => 7 %></p>
-    <p>Beim Kommentar kann <a href="http://de.wikipedia.org/wiki/BBCode">BBCode</a> verwendet werden!</p>
+    <p>Bitte benutzen sie dieses Feld um gegebenenfalls ihr Bild/Einreichung zu kommenieren! Beim Kommentar kann <a href="http://de.wikipedia.org/wiki/BBCode">BBCode</a> verwendet werden!</p>
   </fieldset>
+
+	
+  <h3>Hinweise:</h3>
+  <ul>
+    <li>Felder mit * bitte angeben.</li>
+    <li>Nur Bilddateien und .pdf Dokumente erlaubt.</li>
+    <li>Dateigr&ouml;sse &lt; 10MB.</li>
+  </ul>
+
   <p>
     <%= f.submit 'Upload' %>
   </p>
 
-  <hr />
-  <h3>Hinweise:</h3>
-  <ul>
-    <li>Felder mit * bitte angeben.</li>
-    <li>Nur Bilddateien erlaubt.</li>
-    <li>Dateigr&ouml;sse &lt; 3MB.</li>
-  </ul>
+ 
 <% end %>
+
+<%= link_to "Zur&uuml;ck zur Übersicht von " + @user.name, user_path(@user) %>

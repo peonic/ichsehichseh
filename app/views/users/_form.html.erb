@@ -5,5 +5,5 @@
   	<p><%= f.label :password, "Passwort:" %> (mindestens 4 Zeichen!)<br /><%= password_field :user, :password, :size => 42 %>*</p>
 	<p>
     <%= f.label :password_confirmation, "Passwort wiederholen:"%><br />
-    <%= password_field :user, :password_confirmation , :size => 42 %>*</p>
+    <%= f.password_field :password_confirmation , :size => 42 %>*</p>
 </fieldset>

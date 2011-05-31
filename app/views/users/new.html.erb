@@ -4,8 +4,8 @@
 <p>Felder mit * müssen ausgefüllt werden</p>
 
 <% form_for(@user, :multipart => true)  do |f| %>
-  <%= render :partial => "form", :locals => {:f => f, :user => @user}%>
-  <%= render :partial => "user_informations/form", :locals => {:f => f, :user_information => @user_information}%>
+  <%= render :partial => "form", :locals => {:f => f}%>
+  <%= render :partial => "user_info_form", :locals => {:f => f }%>
   <p>
   Captcha Tag, muss eintragen werden!<br />
   <%= recaptcha_tags %>
