@@ -1,5 +1,5 @@
 class UploadItem < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :story
   
   #  paperclip
   has_attached_file :upload, 
@@ -22,6 +22,8 @@ class UploadItem < ActiveRecord::Base
   validates_acceptance_of :upload_rules, 
                           :on => :create, :accept => true,
                           :message => "Bitte akzeptieren Sie die Regeln f&uuml;r das Hochladen der Dataien."
+  
+  validates_presence_of :story_id, :message => "keine story angegeben!"
   #validates_associated    :participant
   
   
