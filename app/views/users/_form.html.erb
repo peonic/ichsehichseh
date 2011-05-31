@@ -1,23 +1,9 @@
 <% %>
 <fieldset>
-  <legend>TeilnehmerIn</legend>
-  	<p><%= f.label :name, "Name:" %><br /><%= f.text_field :name, :size => 42 %></p>
-	<p><%= f.label :birthday, "Geburtsdatum:"%><br /><%= f.text_field :birthday, :size => 42%></p>
-  	<p><%= f.label :email, "Email Adresse:" %><br /><%= f.text_field :email, :size => 42 %></p>
-  	<p><%= f.label :password, "Password:" %><br /><%= f.password_field :password, :size => 42 %></p>
-<p>
-    <%= f.label :password_confirmation%><br />
-    <%= f.password_field :password_confirmation , :size => 42 %></p>
-	<p><%= f.label :street, "Strasse, Hausnummer:" %><br /><%= f.text_field :street, :size => 42%></p>
-	<p><%= f.label :zip, "Postleitzahl" %>, <%= f.label :city, "Stadt:" %><br /><%= f.text_field :zip, :size => 5 %>
-        <%= f.text_field :city, :size => 33 %></p>
-	<p><%= f.label :telephone, "Telefonnummer:" %><br /><%= f.text_field :telephone, :size => 42 %></p>	
-</fieldset>
-<p></p>
-<fieldset>
-  <legend>Story Beschreibung</legend>
-	<p><%= f.label :storyname, "Name der Fotostory :" %><br /><%= f.text_field :storyname, :size => 42 %></p>
-  	<p><%= f.label :comment, "Beschreibung" %></p>
-  	<p><%= f.text_area :comment, :cols => 68, :rows => 10 %></p>
-  <p>Bei der Beschreibung kann <a href="http://de.wikipedia.org/wiki/BBCode">BBCode</a> verwendet werden!</p>
+  <legend>Login Daten:</legend>
+  	<p><%= f.label :email, "Email Adresse:" %><br /><%= text_field :user, :email, :size => 42 %>*</p>
+  	<p><%= f.label :password, "Passwort:" %> (mindestens 4 Zeichen!)<br /><%= password_field :user, :password, :size => 42 %>*</p>
+	<p>
+    <%= f.label :password_confirmation, "Passwort wiederholen:"%><br />
+    <%= password_field :user, :password_confirmation , :size => 42 %>*</p>
 </fieldset>

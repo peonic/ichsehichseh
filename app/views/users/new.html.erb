@@ -1,9 +1,13 @@
-<h1>TeilnehmerIn</h1>
-<p>es müssen alle Felder ausgefüllt werden</p>
+<% @title= "TeilnehmerIn Registrieren" %>
 
-<% form_for(@user)  do |f| %>
-  <%= render :partial => "form", :locals => {:f => f} %>
+<h1>TeilnehmerIn</h1>
+<p>Felder mit * müssen ausgefüllt werden</p>
+
+<% form_for(@user, :multipart => true)  do |f| %>
+  <%= render :partial => "form", :locals => {:f => f, :user => @user}%>
+  <%= render :partial => "user_informations/form", :locals => {:f => f, :user_information => @user_information}%>
   <p>
+  Captcha Tag, muss eintragen werden!<br />
   <%= recaptcha_tags %>
   </p>
   <p>

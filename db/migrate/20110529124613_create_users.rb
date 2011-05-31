@@ -1,16 +1,6 @@
-class CreateTableUsers < ActiveRecord::Migration
+class CreateUsers < ActiveRecord::Migration
   def self.up
-    create_table :users do |t|
-      
-      t.string :name,       :limit => 100, :null => false
-      t.string :birthday,                   :null => false
-      t.string :street,     :limit => 42, :null => false
-      t.string :city,       :limit => 42, :null => false
-      t.string :zip,        :limit => 5, :null => false
-      t.string :telephone,  :limit => 20, :null => false
-      t.string :storyname,  :limit => 42, :null => false
-      t.text :comment
-      
+    create_table :users do |t|    
       t.string    :email,               :null => false                # optional, you can use login instead, or both
       t.string    :crypted_password,    :null => false                # optional, see below
       t.string    :password_salt,       :null => false                # optional, but highly recommended

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110529124613) do
+ActiveRecord::Schema.define(:version => 20110530213324) do
 
   create_table "participants", :force => true do |t|
     t.string   "name",       :limit => 100, :null => false
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(:version => 20110529124613) do
     t.string   "storyname",  :limit => 42,  :null => false
     t.string   "password",   :limit => 42,  :null => false
     t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stories", :force => true do |t|
+    t.integer  "user_id",                   :null => false
+    t.string   "name",        :limit => 42, :null => false
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -38,23 +46,28 @@ ActiveRecord::Schema.define(:version => 20110529124613) do
     t.datetime "updated_at"
   end
 
-  create_table "users", :force => true do |t|
-    t.string   "name",                :limit => 100,                :null => false
-    t.string   "birthday",                                          :null => false
-    t.string   "street",              :limit => 42,                 :null => false
-    t.string   "city",                :limit => 42,                 :null => false
-    t.string   "zip",                 :limit => 5,                  :null => false
-    t.string   "telephone",           :limit => 20,                 :null => false
-    t.string   "storyname",           :limit => 42,                 :null => false
+  create_table "user_informations", :force => true do |t|
+    t.integer  "user_id",                   :null => false
+    t.string   "name",       :limit => 100, :null => false
+    t.string   "birthday",                  :null => false
+    t.string   "street",     :limit => 42,  :null => false
+    t.string   "city",       :limit => 42,  :null => false
+    t.string   "zip",        :limit => 5,   :null => false
+    t.string   "telephone",  :limit => 20,  :null => false
     t.text     "comment"
-    t.string   "email",                                             :null => false
-    t.string   "crypted_password",                                  :null => false
-    t.string   "password_salt",                                     :null => false
-    t.string   "persistence_token",                                 :null => false
-    t.string   "single_access_token",                               :null => false
-    t.string   "perishable_token",                                  :null => false
-    t.integer  "login_count",                        :default => 0, :null => false
-    t.integer  "failed_login_count",                 :default => 0, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email",                              :null => false
+    t.string   "crypted_password",                   :null => false
+    t.string   "password_salt",                      :null => false
+    t.string   "persistence_token",                  :null => false
+    t.string   "single_access_token",                :null => false
+    t.string   "perishable_token",                   :null => false
+    t.integer  "login_count",         :default => 0, :null => false
+    t.integer  "failed_login_count",  :default => 0, :null => false
     t.datetime "last_request_at"
     t.datetime "current_login_at"
     t.datetime "last_login_at"

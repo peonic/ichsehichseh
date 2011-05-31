@@ -1,8 +1,10 @@
 class UploadItemController < ApplicationController
+  before_filter :require_user
+  
   def new
     @user = current_user
     @upload_item = UploadItem.new()
-    @upload_item.participant = @user
+    @upload_item.user = @user
   end
   
   def create

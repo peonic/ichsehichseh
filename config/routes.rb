@@ -17,13 +17,18 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample resource route with sub-resources:
   #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
-  map.resources :participants, :controller => "participant" do |participants|  
-    participants.resources :upload_item, :controller => "upload_item"
-  end
+  
+  #map.resources :participants, :controller => "participant" do |participants|  
+  #  participants.resources :upload_item, :controller => "upload_item"
+  #end
 
   # authlogic user_session
-  map.resource :user_sessions
+  map.resources :user_sessions
   map.resources :users
+  map.resources :stories
+  map.resources :upload_items, :controller => "upload_item"
+  map.resources :user_informations
+
 
   # Sample resource route with more complex sub-resources
   #   map.resources :products do |products|

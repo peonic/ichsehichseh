@@ -1,12 +1,11 @@
-<%= error_messages_for :picture, :image %>
-
 <h1>Einreichung hochladen</h1>
 <p>
   <strong>Story Name:</strong> 
-  <%= link_to @user.storyname, users_path %>
+  <%= link_to @user.storyname, user_path(@user) %>
 </p>
 
 <% form_for(:upload_item, :url => {:action => :create, :id => @participant }, :html => { :multipart => true }) do |f| %>
+	<%= error_messages_for :upload_item %>
     <p>
       <%= label :upload, "Datei" %>
       <%= f.file_field :upload %> *
@@ -28,8 +27,6 @@
     <p><%= f.text_area :description, :cols => 60, :rows => 7 %></p>
     <p>Beim Kommentar kann <a href="http://de.wikipedia.org/wiki/BBCode">BBCode</a> verwendet werden!</p>
   </fieldset>
-<%= recaptcha_tags %>
-
   <p>
     <%= f.submit 'Upload' %>
   </p>
