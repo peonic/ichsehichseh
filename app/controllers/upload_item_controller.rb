@@ -16,9 +16,8 @@ class UploadItemController < ApplicationController
       redirect_to user_url(current_user)
     else
       flash[:error] = @upload_item.errors
-      render :action => "new"
-    end
-    
+      render :aciotn => new
+    end  
   end
 
   def edit

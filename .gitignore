@@ -3,4 +3,5 @@ log/production.log
 log/server.log
 log/test.log
 tmp/
+config/database.yml
 

@@ -1,6 +1,6 @@
 <h1>Einreichung hochladen für Story: <%= @story.name %></h1>
 
-<% form_for(:upload_item, :html => { :multipart => true }) do |f| %>
+<% form_for(@upload_item, :html => { :multipart => true }) do |f| %>
 	<%= error_messages_for :upload_item %>
     <p>
       <%= label :upload, "Datei" %>

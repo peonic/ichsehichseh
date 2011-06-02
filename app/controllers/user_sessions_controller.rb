@@ -10,7 +10,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:notice] = "Erfolgreich Eingeloggt"
-      redirect_to :controller => :upload_item, :action => :new  
+      redirect_to user_url(@user_session)  
     else
       render :action => :new
     end
