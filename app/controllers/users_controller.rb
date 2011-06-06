@@ -17,8 +17,8 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(params[:user])
-    if @user.save
-#    if verify_recaptcha(:model => @user, :message => "Recaptcha wrong, try again") && @user.save
+#    if @user.save
+    if verify_recaptcha(:model => @user, :message => "Recaptcha wrong, try again") && @user.save
       flash[:notice] = "Registration successful."
       redirect_to new_story_url  
     else
