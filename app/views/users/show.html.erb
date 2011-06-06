@@ -1,3 +1,5 @@
+<% @title= "TeilnehmerIn" %>
+
 <h1>TeilnehmerIn: <%=h @user.name %></h1>
 
 <fieldset>
@@ -26,12 +28,17 @@
 <%= link_to 'Edit', edit_user_url %>
 </p>
 <% if defined?(@story) %>
-<p>
-<%= render :partial => "stories/show", :locals => {:story => @story, :user => @user} %>
-</p>
+	<p>
+	<%= render :partial => "stories/show", :locals => {:story => @story, :user => @user} %>
+	</p>
+
+	<% @story.upload_item.each do |ui| %>
+	<%= render :partial => "upload_item/show", :locals => {:ui => ui} %>
+	<% end %>
+
 <% else %>
-<h2>Fotostory:</h2>
-<p>
-<%= link_to "Neue Fotostory", new_story_url %>
-</p>
+	<h2>Fotostory:</h2>
+	<p>
+	<%= link_to "Neue Fotostory", new_story_url %>
+	</p>
 <% end %>

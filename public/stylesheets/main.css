@@ -75,3 +75,8 @@ div#user_nav {
   float: right;
   font-size: 12px;
 }
+
+table {
+  width: 100%;
+  padding: 12px;
+}

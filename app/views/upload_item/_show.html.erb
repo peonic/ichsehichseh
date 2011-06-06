@@ -1,6 +1,14 @@
-<p>
-Titel:
-</p>
-<%= f.title %>
-</p>
-<%= image_tag f.upload.url(:thumb) %>
+<h3> Titel: <%= ui.title %> </h3>
+<table>
+<tr>
+<td>
+<%= image_tag ui.upload.url(:thumb) %>
+</td>
+<td>
+<fieldset>
+<legend>Beschreibung / Text</legend>
+<%= ui.description %>
+</fieldset>
+</td>
+</tr>
+</table>

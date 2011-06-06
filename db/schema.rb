@@ -11,20 +11,6 @@
 
 ActiveRecord::Schema.define(:version => 20110530213324) do
 
-  create_table "participants", :force => true do |t|
-    t.string   "name",       :limit => 100, :null => false
-    t.string   "email",      :limit => 100, :null => false
-    t.string   "street",     :limit => 42,  :null => false
-    t.string   "town",       :limit => 42,  :null => false
-    t.string   "zip",        :limit => 5,   :null => false
-    t.string   "telephone",  :limit => 20,  :null => false
-    t.string   "storyname",  :limit => 42,  :null => false
-    t.string   "password",   :limit => 42,  :null => false
-    t.text     "comment"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "stories", :force => true do |t|
     t.integer  "user_id",                   :null => false
     t.string   "name",        :limit => 42, :null => false
@@ -34,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20110530213324) do
   end
 
   create_table "upload_items", :force => true do |t|
-    t.integer  "user_id",             :null => false
+    t.integer  "story_id",            :null => false
     t.string   "title"
     t.string   "upload_content_type"
     t.string   "upload_file_name"

@@ -1,20 +1,22 @@
+<% @title= "Neue Einreichung" %>
+
 <h1>Einreichung hochladen für Story: <%= @story.name %></h1>
 
 <% form_for(@upload_item, :html => { :multipart => true }) do |f| %>
 	<%= error_messages_for :upload_item %>
     <p>
-      <%= label :upload, "Datei" %>
+      <%= f.label :upload, "Datei" %>
       <%= f.file_field :upload %> *
     </p>
     <p>
-      <%= label :title, "Titel:" %>
+      <%= f.label :title, "Titel:" %>
       <%= f.text_field :title %> *
     </p>
     <p>
       <%= f.check_box :upload_rules %>
       <label>
         Ich befolge folgende
-        <%= link_to "Regeln", "/pictures.html#uploadrules" %>
+        <%= link_to "Regeln", "/upload.html#uploadrules" %>
         beim Hochladen des Bildes *
       </label>
     </p>
