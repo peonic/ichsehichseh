@@ -18,10 +18,12 @@ class UploadItem < ActiveRecord::Base
   validates_attachment_presence :upload, :message => "keine datei"
   
   # validation
-  validates_presence_of :titel, :message => "Bitte geben Sie einen Titel an."
+  #validates_presence_of :title, :message => "Bitte geben Sie einen Titel an."
   validates_acceptance_of :upload_rules, 
-                          :on => :create, :accept => true,
+                          :on => :create,
                           :message => "Bitte akzeptieren Sie die Regeln f&uuml;r das Hochladen der Dataien."
+  
+  #attr_accessible :upload_rules
   
   validates_presence_of :story_id, :message => "keine story angegeben!"
   #validates_associated    :participant

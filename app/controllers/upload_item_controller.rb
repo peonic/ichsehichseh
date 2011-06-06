@@ -9,14 +9,16 @@ class UploadItemController < ApplicationController
   
   def create
     @upload_item = UploadItem.new(params[:upload_item])
-    @upload_item.story = current_user.story.first
+    @user = current_user
+    @story = @user.story.first
+    @upload_item.story = @story
     
     if @upload_item.save
       flash[:notice] = "Upload completed"
       redirect_to user_url(current_user)
     else
-      flash[:error] = @upload_item.errors
-      render :aciotn => new
+      flash[:error] = "errors occured"#@upload_item.errors.on
+      render :action => 'new'
     end  
   end
 
