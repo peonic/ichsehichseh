@@ -1,7 +1,0 @@
-<h2> Fotostory: <%= @participant.storyname %></h2>
-
-<%= render :partial => "show", :locals => {:f => @participant } %>
-
-<% @upload_items.each do |i| %>
-<%= render :partial => "upload_item/show", :locals => {:f => i} %>
-<% end %>
