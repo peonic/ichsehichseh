@@ -61,6 +61,9 @@ div#header {
 fieldset {
   border: 1px dashed #003366;
 }
+div#footer {
+  text-align: center;
+}
 div#footer ul{
   text-align:center;
   list-style-type: circle;

@@ -2,6 +2,13 @@ class UsersController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
   before_filter :require_user, :only => [:show, :edit, :update]
   
+  def index
+    redirect_to :action => "show"
+  end
+  
+  def list
+    
+  end
   
   def show
     @user = current_user

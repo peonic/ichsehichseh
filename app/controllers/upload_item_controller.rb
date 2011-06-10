@@ -15,7 +15,7 @@ class UploadItemController < ApplicationController
     
     if @upload_item.save
       flash[:notice] = "Upload completed"
-      redirect_to user_url(current_user)
+      redirect_to user_url(current_user.id)
     else
       flash[:error] = "errors occured"#@upload_item.errors.on
       render :action => 'new'
@@ -23,6 +23,19 @@ class UploadItemController < ApplicationController
   end
 
   def edit
+    @upload_item = UploadItem.find(params[:id])
+  end
+  
+  def update
+    @upload_item = UploadItem.find(params[:id])
+    
+    if @upload_item.update_attributes(params[:upload_item])
+      flash[:notice] = "Upload updated"
+      redirect_to user_url(current_user.id)      
+    else
+      flash[:error] = "errors occured"#@upload_item.errors.on
+      render :action => 'edit'      
+    end
   end
 
 end

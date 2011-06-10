@@ -1,2 +1,38 @@
-<h1>UploadItem#edit</h1>
-<p>Find me in app/views/upload_item/edit.html.erb</p>
+<% @title= "Einreichung Editieren" %>
+
+<h2>Einreichung editieren</h2>
+
+<% form_for(@upload_item) do |f|%>
+<table>
+  <tr>
+    <td>Bild</td>
+    <td>
+      <%= image_tag @upload_item.upload(:thumb) %>
+    </td>
+  </tr>
+  <tr>
+    <td><%= f.label :created_at, "Datum:" %></td>
+    <td>
+      <%= f.text_field :created_at, { :size => 23, :disabled => true } %>
+    </td>
+  </tr>
+  <tr>
+    <td><%= f.label :title, "Titel:"  %></td>
+    <td>
+      <%= f.text_field :title, { :size => 23 } %>
+    </td>
+  </tr>
+  <tr>
+    <td><%= f.label :description, "Kommentar:" %></td>
+    <td colspan="2">
+      <%= f.text_area :description, :cols => 40, :rows => 10 %>
+    </td>
+  </tr>
+</table>
+<p>Beim Kommentar kann <a href="http://de.wikipedia.org/wiki/BBCode">BBCode</a> verwendet werden!</p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+<%= link_to "Zurück", "/" %>
