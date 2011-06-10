@@ -1,0 +1,20 @@
+<% @title= "TeilnehmerInnen" %>
+
+<h3>TeilnehmerInnen:</h3>
+
+<hr />
+<% @users.each do |u|%>
+
+<table>
+<tr>
+<td>Name: </td>
+<td><%=h u.name %></td>
+</tr>
+<tr>
+<td>Stadt: </td><td><%=h u.city%></td>
+</tr>
+</table>
+<hr />
+
+<% end %>
+
