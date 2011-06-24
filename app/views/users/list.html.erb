@@ -11,10 +11,37 @@
 <td><%=h u.name %></td>
 </tr>
 <tr>
+<td>Mail: </td>
+<td><%=h u.email %></td>
+</tr>
+<tr>
+<td>Date: </td>
+<td><%=h u.birthday %></td>
+</tr>
+<tr>
+<td>Street: </td>
+<td><%=h u.zip %> | <%=h u.street %></td>
+</tr>
+<tr>
 <td>Stadt: </td><td><%=h u.city%></td>
 </tr>
+<tr>
+<td>Kommentar: </td>
+<td><%=h u.comment %>
+</td></tr>
 </table>
 <hr />
+
+
+<% if defined?(u.story.first) %>
+	<p>
+	<%= render :partial => "stories/show", :locals => {:story => u.story.first, :user => u} %>
+	</p>
+
+	<% u.story.first.upload_item.each do |ui| %>
+		<%= render :partial => "upload_item/show", :locals => {:ui => ui} %>
+	<% end %>
+<% end %>
 
 <% end %>
 
